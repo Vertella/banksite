@@ -13,7 +13,7 @@ const createAccount = () => {
         const username = event.target.elements.username.value;
         const password = event.target.elements.password.value;
 
-        fetch('http://localhost:3000/users', {
+        fetch('http://'+ process.env.NEXT_PUBLIC_BACKEND_HOST + ':3000/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

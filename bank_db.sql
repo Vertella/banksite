@@ -1,20 +1,18 @@
-CREATE DATABASE bank_db;
+CREATE DATABASE IF NOT EXISTS bank_app;
 
-USE bank_db;
-
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
   id VARCHAR(50) PRIMARY KEY,
   username VARCHAR(50) NOT NULL,
   password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE accounts (
+CREATE TABLE IF NOT EXISTS accounts (
   id VARCHAR(50) PRIMARY KEY,
   username VARCHAR(50) NOT NULL,
   amount DECIMAL(10, 2) DEFAULT 0.00
 );
 
-CREATE TABLE sessions (
+CREATE TABLE IF NOT EXISTS sessions (
   username VARCHAR(50),
   onetimepass VARCHAR(50),
   PRIMARY KEY (username, onetimepass)

@@ -4,17 +4,16 @@ import cors from "cors";
 import mysql from "mysql2/promise";
 
 const app = express();
-const port = process.env.PORT || 3000; // Set your desired port
+const port = process.env.PORT || 3000; 
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
 const connection = await mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "ExB3RYfeCMINW2",
-  database: "bank_app",
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DB,
   port: 3306,
 });
 

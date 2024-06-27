@@ -11,7 +11,7 @@ const AccountPage = () => {
 
     const onetimepass = event.target.elements.onetimepass.value;
 
-    fetch("http://localhost:3000/me/accounts", {
+    fetch("http://"+ process.env.NEXT_PUBLIC_BACKEND_HOST + ":3000/me/accounts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const AccountPage = () => {
     const onetimepass = event.target.elements.onetimepass.value;
     const amount = parseFloat(event.target.elements.amount.value);
 
-    fetch("http://localhost:3000/me/accounts/transactions", {
+    fetch("http://"+ process.env.NEXT_PUBLIC_BACKEND_HOST + ":3000/me/accounts/transactions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
